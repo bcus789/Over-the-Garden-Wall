@@ -1,16 +1,17 @@
 .card {
-  background: #fff;
+  background: rgb(192, 192, 192);
   border-radius: 2px;
   height: 325px;
   margin: 1rem;
   position: relative;
-  width: 325px;
+  width: 250px;
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
-  text-align: left;
+  text-align: center;
 }
 
 .card > .img-container {
-  height: 60%;
+  padding-top: 15px;
+  height: 70%;
   overflow: hidden;
   text-align: center;
   background: rgb(3, 3, 3);
@@ -20,6 +21,7 @@
 }
 
 .card > .content {
+  font-family: "tomeoftheunknownregular" !important;
   margin-top: 25px;
   margin-right: 40px;
   font-size: 25px;
@@ -31,6 +33,7 @@
 }
 
 .card > .content > ul > li {
+  font-family: "tomeoftheunknownregular" !important;
   margin-top: 18px;
 }
 
