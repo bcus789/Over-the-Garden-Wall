@@ -22,21 +22,21 @@
   },
   {
     "id": 4,
-    "name": "The Woodsman",
+    "name": "Woodsman",
     "image": "/assets/images/woodsman.webp",
     "occupation": "Boy Genius",
     "location": "A Secret Laboratory"
   },
   {
     "id": 5,
-    "name": "The Frog",
+    "name": "Frog",
     "image": "/assets/images/frog.jpg",
     "occupation": "A Cowardly Dog",
     "location": "Nowhere, Kansas"
   },
   {
     "id": 6,
-    "name": "The Beast",
+    "name": "Beast",
     "image": "/assets/images/beast.jpg",
     "occupation": "Student",
     "location": "Bluffington"
@@ -58,13 +58,13 @@
   {
     "id": 9,
     "name": "Quincy Endicott",
-    "image": "/assets/images/quincy.webp",
+    "image": "/assets/images/quincy.png",
     "occupation": "Adventurer",
     "location": "California"
   },
   {
     "id": 10,
-    "name": "The Highwayman",
+    "name": "Highwayman",
     "image": "/assets/images/highway.png",
     "occupation": "Cashier",
     "location": "O-Town, California"

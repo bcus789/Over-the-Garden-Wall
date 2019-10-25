@@ -8,9 +8,7 @@ const FriendCard = props => (
     </div>
     <div className="content">
       <ul>
-        <li>
-          <strong>Name:</strong> {props.name}
-        </li>
+        <li>{props.name}</li>
       </ul>
     </div>
   </div>
