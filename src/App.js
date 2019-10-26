@@ -25,13 +25,12 @@ class App extends Component {
     let clicked_ids = this.state.clicked_ids;
     
     if(clicked_ids.includes(id)){
-      console.log("wrong!")
-      this.setState({ clicked_ids: [], score: 0});
+      this.setState({ clicked_ids: [], score: 0, message:  "The Beast has claimed his prize in flesh"});
     } else {    
       clicked_ids.push(id);
-      this.setState({score: clicked_ids.length,})
-      if (this.state.score === 2){
-        this.setState({ clicked_ids: [], score: 0 });
+      this.setState({score: clicked_ids.length, message: "Don' stray from the path"})
+      if (this.state.score === 12){
+        this.setState({ clicked_ids: [], score: 0, message:  "You have found your way home" });
       }
     }
 

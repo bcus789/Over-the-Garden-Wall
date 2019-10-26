@@ -1,6 +1,7 @@
 .title {
   font-family: "tomeoftheunknownregular";
   margin-top: 50px;
+  margin-bottom: 80px !important;
   width: 100%;
   text-align: center;
   font-size: 5rem;
