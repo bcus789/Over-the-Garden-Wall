@@ -1,9 +1,19 @@
 .title {
   font-family: "tomeoftheunknownregular";
-  margin-top: 50px;
+  margin-top: 30px;
   width: 100%;
   text-align: center;
   font-size: 5rem;
   color: rgb(0, 0, 0);
   margin-bottom: 50px;
+}
+
+h5 {
+font-family: "tomeoftheunknownregular";
+margin-top: -40px !important;
+margin-bottom: 80px !important;
+font-size: 20px;
+text-align: center !important;
+position: relative;
+width: 100%;
 }
