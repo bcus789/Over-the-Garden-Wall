@@ -1,65 +1,66 @@
 import React, { Component } from "react";
 import FriendCard from "./components/FriendCard";
 import Wrapper from "./components/Wrapper";
-import Title from "./components/Title";
 import friends from "./friends.json";
-import NavBar from "./components/NavBar/navBar";
+import NavBar from "./components/NavBar";
+
 
 class App extends Component {
+
   state = {
     friends,
+    clicked_ids:[],
     score: 0,
-    topScore: 0,
-    clicked: []
+    message: ""
   };
-  removeFriend = id => {
-    const friends = this.state.friends.filter(friend => friend.id !== id);
+
+
+  shuffle = () => {
+    const friends = this.state.friends.sort( () => Math.random() - 0.5);
+
     this.setState({ friends });
   };
-
-  clickedImage = props => {
-    if (this.state.clicked.includes(props.id) === false) {
-      this.state.clicked.push(props.id);
-      this.setState({
-        score: this.state.score + 1
-      });
-      if (this.state.score >= this.state.topScore) {
-        this.setState(prevState => ({
-          topScore: prevState.score,
-          topMessage: "You guessed correctly!"
-        }));
-      }
-    } else {
-      this.setState({
-        score: 0,
-        clicked: [],
-        topMessage: "You guessed incorrectly!"
-      });
-      if (this.state.score >= this.state.topScore) {
-        this.setState({ topScore: this.state.score });
+  
+  pickEval = id => {
+    let clicked_ids = this.state.clicked_ids;
+    
+    if(clicked_ids.includes(id)){
+      console.log("wrong!")
+      this.setState({ clicked_ids: [], score: 0});
+    } else {    
+      clicked_ids.push(id);
+      this.setState({score: clicked_ids.length,})
+      if (this.state.score === 2){
+        this.setState({ clicked_ids: [], score: 0 });
       }
     }
+
+    
+    this.shuffle();
+
   };
 
-  // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
+    this.state.friends.sort( () => Math.random() - 0.5)
     return (
-      <div>
-        <NavBar scores={this.state} />
-        <Wrapper>
-          <Title>Over the Garden Wall</Title>
-          {this.state.friends.map(friend => (
-            <FriendCard
-              removeFriend={this.removeFriend}
-              id={friend.id}
-              key={friend.id}
-              name={friend.name}
-              image={friend.image}
-              occupation={friend.occupation}
-              location={friend.location}
-            />
-          ))}
-        </Wrapper>
+      <div className = "App">
+      <NavBar 
+        total = {this.state.score}
+        message = {this.state.message}
+      />
+      <Wrapper>
+        {this.state.friends.map(friend => (
+          <FriendCard
+            id={friend.id}
+            handleClick = {this.pickEval}
+            key={friend.id}
+            name={friend.name}
+            image={friend.image}
+            occupation={friend.occupation}
+            location={friend.location}
+          />
+        ))}
+      </Wrapper>
       </div>
     );
   }
