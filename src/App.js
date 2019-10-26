@@ -3,7 +3,7 @@ import FriendCard from "./components/FriendCard";
 import Wrapper from "./components/Wrapper";
 import friends from "./friends.json";
 import NavBar from "./components/NavBar";
-
+import Title from "./components/Title";
 
 class App extends Component {
 
@@ -49,6 +49,7 @@ class App extends Component {
         message = {this.state.message}
       />
       <Wrapper>
+      <Title>Over the Garden Wall</Title>
         {this.state.friends.map(friend => (
           <FriendCard
             id={friend.id}
