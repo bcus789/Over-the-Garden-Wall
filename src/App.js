@@ -34,7 +34,6 @@ class App extends Component {
       }
     }
 
-    
     this.shuffle();
 
   };
@@ -49,6 +48,7 @@ class App extends Component {
       />
       <Wrapper>
       <Title>Over the Garden Wall</Title>
+      <h5>select the same and feel the pain</h5>
         {this.state.friends.map(friend => (
           <FriendCard
             id={friend.id}
